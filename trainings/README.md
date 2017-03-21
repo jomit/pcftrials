@@ -4,8 +4,8 @@
 
 Prerequisites:
 --------------------------------------
-SignUp for Cloud Fountry : https://run.pivotal.io/
-Install Cloud Foundry CLI : https://github.com/cloudfoundry/cli#downloads
+- SignUp for Cloud Fountry : https://run.pivotal.io/
+- Install Cloud Foundry CLI : https://github.com/cloudfoundry/cli#downloads
 
 
 Pushing Your First App
