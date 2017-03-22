@@ -121,6 +121,27 @@ Stateful Services
 	$ cf bind-service stateful-app redis
 	$ cf restart stateful-app
 
+Domain Route
+-----------------------------------------------------
+	$ cf create-route development cfapps.io --hostname jomitapp
+	$ cd 08-domains-routes\v1.0\
+	$ cf push
+	$ cf map-route v1.0 cfapps.io --hostname jomitapp
+	$ cf push
+
+	$ cf create-route development cfapps.io --hostname jomitappnew
+	$ cd 08-domains-routes\v1.1\
+	$ cf push
+	$ cf map-route v1.1 cfapps.io --hostname jomitappnew
+	$ cf push
+
+	$ cf map-route v1.1 cfapps.io --hostname jomitapp
+	$ cf unmap-route v1.0 cfapps.io --hostname jomitapp
+	$ cf apps
+
+	$ cf routes
+	$ cf delete-orphaned-routes
+
 
 
 
