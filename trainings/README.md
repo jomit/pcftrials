@@ -32,6 +32,8 @@ Pushing Your First App
 
 Build Packs
 --------------------------------------
+	$ cf buildpacks
+	
 	$ cd 04-buildpacks\static-app
 	$ cf push
 	$ cf app static-app
@@ -72,6 +74,7 @@ Debugging
 
 	$ cf events debug-app
 	$ cf logs debug-app
+	$ cf logs debug-app --recent
 
 
 App Instrumentation using New Relic
