@@ -5,7 +5,8 @@
   "main": "server.js",
   "author": "Jomit Vaghela",
   "dependencies": {
-    "azure-event-hubs": "0.0.6"
-    //"express": "^4.15.2"
+    "azure-event-hubs": "0.0.6",
+    "express": "^4.15.2",
+    "socket.io": "^1.7.3"
   }
 }

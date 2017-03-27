@@ -4,5 +4,24 @@
     </head>
     <body>
         <h1>IoT Dashboard</h1>
+        <h3 id="initialize"></h3>
+        <div>
+            <ul id="messages">
+            </ul>
+        </div>
     </body>
 </html>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+  var socket = io.connect('http://localhost:3000');
+  socket.on('connectionstart', function (data) {
+    $("#initialize").text(data.message);
+    //socket.emit('my other event', { my: 'data' });
+  });
+
+  socket.on('ambientlightsensor',function(data){
+    $("#messages").append("<li>" + JSON.stringify(data) +"</li>");
+  });
+  
+</script>
