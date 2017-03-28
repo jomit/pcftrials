@@ -26,10 +26,13 @@
     # Signup for PWS Trial Account
     # Setup Org and Spaces
     
-# Lab 5 - Configure and Push Remote Monitoring App
+# Lab 5 - Configure and Push Remote Monitoring Dashboard App
 --------------------------------------
 
     # Clone sample app git repo
     # Update App Configuration to connect to IoT Hub    
     # Deploy & Test sample app
+    
+    $ cf push jomitdashboard -c "node server.js" -b https://github.com/cloudfoundry/nodejs-buildpack
+
     # Scale sample app ???

@@ -21,12 +21,12 @@ var connectCallback = function (err) {
 
      // Create a message and send it to the IoT Hub every second
      setInterval(function(){
-         var ambientlight = 1200 + (Math.random() * 4);
+         var ambientlight = 1100 + (Math.random() * 4);
          var data = JSON.stringify({ deviceId: 'simulatedsensor1', ambientlight: ambientlight });
          var message = new Message(data);
          console.log("Sending message: " + message.getData());
          client.sendEvent(message, printResultFor('send'));
-     }, 5000);
+     }, 3000);
    }
 };
 

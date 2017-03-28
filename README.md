@@ -1,2 +1,2 @@
 # Pivotal Cloud Foundry on Azure
-Sample Code for Pivotal Cloud Foundry on Azure
+Code + Artifats for Pivotal Cloud Foundry on Azure Trainings + Workshops
