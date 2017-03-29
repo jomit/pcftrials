@@ -1,5 +1,5 @@
 # Prerequisites 
---------------------------------------
+
 Azure Trial Subscription : https://azure.microsoft.com/en-us/free/
 
 Azure CLI : https://docs.microsoft.com/en-us/cli/azure/install-azure-cli 
@@ -14,7 +14,7 @@ Git : https://git-scm.com/
 
 
 # Lab 1 - Setup Device
---------------------------------------
+
 Setup Raspberry Pi
     https://www.raspberrypi.org/documentation/setup/
 
@@ -41,13 +41,9 @@ SSH into the device and install Node and Git
 # Lab 2 - Create IoT Hub and Register a Device
 ------------------------------------------------
 
-Create IoT Hub using Azure Portal
+Create IoT Hub using Azure Portal : https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal
 
-    https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal
-
-Create IoT Hub using CLI 2.0
-
-    https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-using-cli
+Create IoT Hub using CLI 2.0 : https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-using-cli
 
 	$ az login
 
