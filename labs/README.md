@@ -16,6 +16,7 @@ Git : https://git-scm.com/
 # Lab 1 - Setup Device
 
 Setup Raspberry Pi
+
 https://www.raspberrypi.org/documentation/setup/
 
 https://www.hanselman.com/blog/HowToSetUpARaspberryPi3FromScratchWithVideo.aspx
