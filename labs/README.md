@@ -1,10 +1,15 @@
 # Prerequisites 
 --------------------------------------
 Azure Trial Subscription : https://azure.microsoft.com/en-us/free/
+
 Azure CLI : https://docs.microsoft.com/en-us/cli/azure/install-azure-cli 
+
 Pivotal Web Services Trial Account : https://run.pivotal.io/
+
 Cloud Foundry CLI : https://github.com/cloudfoundry/cli#downloads
+
 Nodejs : https://nodejs.org/en/
+
 Git : https://git-scm.com/ 
 
 
@@ -12,6 +17,7 @@ Git : https://git-scm.com/
 --------------------------------------
 Setup Raspberry Pi
     https://www.raspberrypi.org/documentation/setup/
+
     https://www.hanselman.com/blog/HowToSetUpARaspberryPi3FromScratchWithVideo.aspx
 
     (Install device-discovery-cli it needed to get the IP of your PI)
@@ -36,9 +42,11 @@ SSH into the device and install Node and Git
 ------------------------------------------------
 
 Create IoT Hub using Azure Portal
+
     https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal
 
 Create IoT Hub using CLI 2.0
+
     https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-using-cli
 
 	$ az login
