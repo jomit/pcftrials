@@ -39,7 +39,6 @@ SSH into the device and install Node and Git
 
 
 # Lab 2 - Create IoT Hub and Register a Device
-------------------------------------------------
 
 Create IoT Hub using Azure Portal : https://docs.microsoft.com/en-us/azure/iot-hub/iot-hub-create-through-portal
 
@@ -47,57 +46,50 @@ Create IoT Hub using CLI 2.0 : https://docs.microsoft.com/en-us/azure/iot-hub/io
 
 	$ az login
 
+    $ az account list 
+
     $ az account set --subscription {subscription id or name}
 
     $ az provider register -n "Microsoft.Devices"
 
     $ az group create --name {resource group name} --location westus
 
+    $ az iot hub list
+
+    $ az iot hub show-connection-string
+
     $ az iot hub create --name {my hub name} --resource-group {resource group name}
 
 Register your Device in IoT Hub
 
-    (For Windows command prompt)
-    $ az iot device create --device-id myraspberrypi --hub-name {my hub name} --x509 --output-dir %USERPROFILE%\.iot-hub-getting-started
+    $ az iot device create --device-id myraspberrypi --hub-name {my hub name}
 
-    # For macOS or Ubuntu
-    az iot device create --device-id myraspberrypi --hub-name {my hub name} --x509 --output-dir ~/.iot-hub-getting-started
+    $ az iot device list --hub-name {my hub name}
+
+    $ az iot device list --hub-name {my hub name} --query [].deviceId
 
 # Lab 3 - Connect Device to Azure
---------------------------------------
-
-    # Install Azure CLI
-    # Register a new device in IoT Hub
-    # Configure App on the Device to connect to IoT Hub
-    # Test Messages coming to IoT Hub using iothub explorer    
-
-# Lab 4 - Setup Pivotal Cloud Foundry
---------------------------------------
-
-Signup for PWS Trial Account
-    https://run.pivotal.io/
-Install Cloud Foundry CLI
-    https://github.com/cloudfoundry/cli#downloads
-
-    $ cf --version
-    $ cf login
     
-# Lab 5 - Configure and Push Apps
---------------------------------------
-
     $ git clone https://github.com/jomit/pcftrials.git
 
-    $ cd pcftrials/labs/basic
+    $ cd pcftrials/labs/device
 
+    (Update the IoT Hub connectionString in device-simulated-data.js file)
 
+    $ npm install
 
-    # Update App Configuration to connect to IoT Hub    
-    # Deploy & Test sample app
+    $ node device-simulated-data.js
     
+# Lab 4 - Push Apps to PWS
+
+    $ cf --version
+
+    $ cf login
+
     $ cd pcftrials/labs/dashboard
-    
-Update Connection String for IoT Hub
 
-    $ cf push jomitdashboard -c "node server.js" -b https://github.com/cloudfoundry/nodejs-buildpack
+    (Update IoT hub connectionString)
 
-    # Scale sample app ???
+    $ cf push {app name} -c "node server.js" -b https://github.com/cloudfoundry/nodejs-buildpack
+
+    (Browse to PWS Dasboard the open the Application Url)
