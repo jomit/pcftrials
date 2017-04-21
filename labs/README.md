@@ -87,7 +87,7 @@ Register your Device in IoT Hub
 
     $ cf login
 
-    $ cd pcftrials/labs/dashboard
+    $ cd pcftrials/labs/livedashboard
 
     (Update IoT hub connectionString)
 

@@ -20,6 +20,10 @@ var printError = function (err) {
 
 var client = EventHubClient.fromConnectionString(connectionString);
 
+function getRandomValue(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 io.on('connection', function (socket) {
   socket.emit('connectionstart', { message: 'Started Receiving...' });
   socket.on('command', function (data) {
@@ -40,4 +44,11 @@ io.on('connection', function (socket) {
         });
     })
     .catch(printError);
+
+    // SIMULATE IOT HUB EVENTS
+    // ------------------------------------------------------------------
+    // setInterval(function(){
+    //     var ambientlight = getRandomValue(500,1200);
+    //     socket.emit('ambientlightsensor', { deviceId: 'simulatedsensor1', ambientlight: ambientlight });
+    //  }, 250);
 });

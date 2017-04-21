@@ -13,6 +13,10 @@ function printResultFor(op) {
    };
 }
 
+function getRandomValue(min, max) {
+	return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 var connectCallback = function (err) {
    if (err) {
      console.log('Could not connect: ' + err);
@@ -21,12 +25,12 @@ var connectCallback = function (err) {
 
      // Create a message and send it to the IoT Hub every second
      setInterval(function(){
-         var ambientlight = 1100 + (Math.random() * 4);
+         var ambientlight =   getRandomValue(500,1200);
          var data = JSON.stringify({ deviceId: 'simulatedsensor1', ambientlight: ambientlight });
          var message = new Message(data);
          console.log("Sending message: " + message.getData());
          client.sendEvent(message, printResultFor('send'));
-     }, 3000);
+     }, 1000);
    }
 };
 
