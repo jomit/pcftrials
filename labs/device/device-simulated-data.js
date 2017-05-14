@@ -25,8 +25,8 @@ var connectCallback = function (err) {
 
      // Create a message and send it to the IoT Hub every second
      setInterval(function(){
-         var ambientlight =   getRandomValue(500,1200);
-         var data = JSON.stringify({ deviceId: 'simulatedsensor1', ambientlight: ambientlight });
+         var temperature =   getRandomValue(0,150);
+         var data = JSON.stringify({ deviceId: 'simulatedsensor1', temperature: temperature });
          var message = new Message(data);
          console.log("Sending message: " + message.getData());
          client.sendEvent(message, printResultFor('send'));

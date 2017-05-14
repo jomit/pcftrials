@@ -69,7 +69,7 @@ Register your Device in IoT Hub
 
     $ az iot device list --hub-name {my hub name} --query [].deviceId
 
-# Lab 3 - Connect Device to Azure
+# Lab 3 - Connect Simulated Device to Azure
     
     $ git clone https://github.com/jomit/pcftrials.git
 
@@ -81,13 +81,65 @@ Register your Device in IoT Hub
 
     $ node device-simulated-data.js
     
-# Lab 4 - Push Apps to PWS
+# Lab 4 - Connect Raspberry PI to Azure
+    
+    TODO...
+
+# Lab 5 - Test Sample Client App
+
+    $ cd pcftrials/labs/sampleclientapp
+
+    (Update IoT hub connectionString)
+
+    $ npm install
+
+    $ node server.js
+
+# Lab 6 - Setup DocumentDB
+
+    - Create new DocumentDB in the same resource group as your IoT hub
+
+    - Add a new Collection in DocumentDB
+
+
+# Lab 7 - Configure Stream Analytics
+
+    - Create new Stream Analytics Job
+
+    - Configure IoT Hub as Input
+    
+    - Configure DocumentDB as Output
+
+    - Add Pass through query
+
+    SELECT *
+    INTO documentdb
+    FROM iothubinput
+
+    - Test Query with Live Sample Data
+
+    - Add Threshold alerting query
+
+    SELECT 
+        System.Timestamp AS OutputTime,
+        DEVICEID AS SensorName,
+        Avg(TEMPERATURE) AS AvgTemperature
+    INTO
+        documentdb
+    FROM
+        iothubinput TIMESTAMP By EventEnqueuedUtcTime
+    GROUP BY 
+        TumblingWindow(second,5),DEVICEID
+    HAVING 
+        Avg(TEMPERATURE)>50
+
+# Lab 8 - Test Dashboard App and Push to PWS
 
     $ cf --version
 
     $ cf login
 
-    $ cd pcftrials/labs/livedashboard
+    $ cd pcftrials/labs/dashboard
 
     (Update IoT hub connectionString)
 
